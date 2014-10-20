@@ -4,8 +4,8 @@ Sintetizador_Voz
 Proyecto Final - Introducción a los Sistemas Embebidos
 
 Integrantes del Proyecto:
- - Adrian Fallas
- - Leonardo Rodriguez
+ - Adrián Fallas
+ - Leonardo Rodríguez
  - Carlos Andrés Zúñiga
 
 DESCRIPCIÓN
