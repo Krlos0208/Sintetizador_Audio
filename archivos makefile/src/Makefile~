@@ -1,0 +1,11 @@
+PROG=cronometro
+EJEC=cronometro
+
+PROGRA= $(PROG).c
+
+CC=gcc
+GBIN=../bin/
+
+$(EJEC): $(PROGRA)
+		$(CC) -o $(GBIN)$(EJEC) $(PROGRA) 
+
