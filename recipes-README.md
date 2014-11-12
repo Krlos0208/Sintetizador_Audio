@@ -1,6 +1,6 @@
 #AGREGAR RECIPES A IMAGEN 
 
-Primero descargar y descomprimir los pacquetes necesarios de la imagen.
+Primero descargar y descomprimir los paquetes necesarios de la imagen.
 
 Crear carpeta meta-BIBLIOTECA en principal del sistema
 
@@ -25,11 +25,11 @@ Modificar layer.conf y poner:
 Ahora, ingresar a carpeta recipes-BIBLIOTECA que es donde van las recetas
 
 Ingresar al link https://github.com/openembedded/openembedded-core
-donde estan las bibliotecas libres que podremos usar en el SE y descargarlas
+donde están las bibliotecas libres que podremos usar en el SE y descargarlas
 
-Dentro de la carpeta descargada buscamos nuestra nueva BIBLIOTECA en "meta", "recipes-multimedia" y "BIBLIOTECA" copiamos y pegamos esta úultima en recipes-BIBLIOTECA anteriormente creada
+Dentro de la carpeta descargada buscamos nuestra nueva BIBLIOTECA en "meta", "recipes-multimedia" y "BIBLIOTECA" copiamos y pegamos esta última en recipes-BIBLIOTECA anteriormente creada
 
-Nuevamente en la carpeta descargada, buscamos en "meta", "recipes-devtools", "orc" copiamos y pegamos esta úultima en recipes-BIBLIOTECA anteriormente creada
+Nuevamente en la carpeta descargada, buscamos en "meta", "recipes-devtools", "orc" copiamos y pegamos esta última en recipes-BIBLIOTECA anteriormente creada
 
 Abrir la terminal y direccionarse en la carpeta principal del sistema de la imagen, misma donde creamos la carpeta meta-BIBLIOTECA
 
@@ -43,7 +43,7 @@ Igualmente en HOB seleccionamos nuestra "machine" y esperamos un momento. Luego 
 
 Ahora el HOB nos hubicará en edid recipes donde en la barra de busqueda ubicamos los recipes necesarios de la BIBLIOTECA e incluimos todos los paquetes, luego "build packages" y esperamos mientras se construyen los paquetes.
 
-Luego, en edit pakckages y seleccionamos todo lo necesario nuevamente busncando desde la barra de busqueda y le damos "built image"
+Luego, en edit packages y seleccionamos todo lo necesario nuevamente buscando desde la barra de busqueda y le damos "build image"
 
 Y listo.
 
