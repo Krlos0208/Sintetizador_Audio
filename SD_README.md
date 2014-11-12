@@ -1,6 +1,6 @@
 # CREAR BOOTEABLE DE LA IMAGEN PARA SD
 
-Primero formatear SD y realizar particion con GParted.
+Primero formatear SD y realizar partición con GParted.
 
 ``` sh
 sudo mkfs.vfat -F 16 -n "boot" /dev/mmcblk0p1
