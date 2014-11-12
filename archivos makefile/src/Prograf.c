@@ -20,7 +20,7 @@
 #define gray  "\033[0;37m"
 #define none   "\033[0m"
 
-void Transformar(){
+void Transformar(int Seleccion){
 	
 	char Opcion;
 
@@ -30,13 +30,15 @@ void Transformar(){
     printf("%s                    -----------------------------------------------------------------------------------------   \n",red);
     printf("%s                   |                     *************EFECTO DE SONIDO*************                          |  \n",red);
     printf("%s                   |                                                                                         |   \n",red);
-    printf("%s                   |     %s1.Ardillas                                                                          %s|   \n",red,brown,red);
+    printf("%s                   |     %s1.Normal                                                                            %s|   \n",red,brown,red);
     printf("%s                   |                                                                                         |   \n",red);
-    printf("%s                   |     %s2.Darth Vader                                                                       %s|    \n",red,brown,red);
+    printf("%s                   |     %s2.Ardillas                                                                          %s|   \n",red,brown,red);
+    printf("%s                   |                                                                                         |   \n",red);
+    printf("%s                   |     %s3.Darth Vader                                                                       %s|    \n",red,brown,red);
     printf("%s                   |                                                                                         |\n",red);
-    printf("%s                   |     %s3.Eco                                                                               %s|    \n",red,brown,red);
+    printf("%s                   |     %s4.Eco                                                                               %s|    \n",red,brown,red);
     printf("%s                   |                                                                                         |\n",red);
-    printf("%s                   |     %s4.Salir                                                                             %s|    \n",red,brown,red);
+    printf("%s                   |     %s5.Salir                                                                             %s|    \n",red,brown,red);
     printf("%s                   |                                                                                         |\n",red);
 
     printf("%s                    -----------------------------------------------------------------------------------------  \n\n",red);
@@ -48,80 +50,49 @@ void Transformar(){
     switch(Opcion){
         
         case '1':
-        system ("clear");
-        system ("gst-launch-0.10 filesrc location=sonido.ogg ! decodebin ! audioconvert ! pitch tempo=0.8 pitch=1.2 rate=1.2 output-rate=1.2 ! audioconvert ! audioresample ! alsasink");
+         system ("clear");
+        if (Seleccion==0){
+        system ("gst-launch-0.10 filesrc location=sonido.ogg ! decodebin ! audioconvert ! audioresample ! alsasink"); 
+               // bifurcacion. ! queue ! audioconvert ! wavescope ! ffmpegcolorspace ! ximagesink");
+              }
+        if (Seleccion==1){
+        system ("gst-launch filesrc location=BohemianRhapsody.ogg ! decodebin ! audioconvert ! audioresample ! autoaudiosink" );
+       }
+        if (Seleccion==2){
+        system ("gst-launch filesrc location=DBZ.ogg ! decodebin ! audioconvert ! audioresample ! autoaudiosink" );
+       }        
+       if (Seleccion==3){
+        system ("gst-launch filesrc location=PuertaNegra.ogg ! decodebin ! audioconvert ! audioresample ! autoaudiosink" );
+       }
+        if (Seleccion==4){
+        system ("gst-launch filesrc location=LosPollitosDicen.ogg ! decodebin ! audioconvert ! audioresample ! autoaudiosink" );
+       }
+        if (Seleccion==5){
+        system ("gst-launch filesrc location=Toxicity.ogg ! decodebin ! audioconvert ! audioresample ! autoaudiosink" );
+       }
+        sleep(1);
         break;
-        
-        case '2': 
-        system("clear");
-        system ("gst-launch-0.10 filesrc location=sonido.ogg ! decodebin ! audioconvert ! pitch tempo=0.8 pitch=0.9 rate=0.9 output-rate=0.9 ! audioconvert ! audioresample ! alsasink");
-        break;
-        
-        case '3': 
-        system("clear");
-        system ("gst-launch-0.10 filesrc location=sonido.ogg ! decodebin ! audioconvert ! pitch tempo=1 pitch=1 rate=1 output-rate=1 ! audioecho intensity=0.6 feedback=0.4 delay=400000000 ! audioconvert ! audioresample ! alsasink");
-        break;
-        
-        case '4':
-        system("clear");
-        return;
-        break;
-        
-        default: printf("                      Opcion Invalida!!\n"); sleep(1);
-        
-}
-
-}
-
-}
-
-int main(){
-	
-  
-	
-	char Opcion;
-	
-    while(1){
-	//sleep(5);
-    system("clear");
-    printf("%s                    -----------------------------------------------------------------------------------------   \n",red);
-    printf("%s                   |                               ***SINTETIZADOR DE VOZ***                                 |  \n",red);
-    printf("%s                   |                                                                                         |   \n",red);
-    printf("%s                   |     %s1.Grabar Sonido                                                                     %s|   \n",red,brown,red);
-    printf("%s                   |                                                                                         |   \n",red);
-    printf("%s                   |     %s2.Salir                                                                             %s|    \n",red,brown,red);
-    printf("%s                   |                                                                                         |\n",red);
-    printf("%s                    -----------------------------------------------------------------------------------------  \n\n",red);
-    
-    printf("%s                        Opción: ",green);
-    printf("%s",none);
-    scanf("%s", &Opcion);
-    
-    switch(Opcion){
-        
-        case '1':
-        system ("clear");
-        system ("gst-launch-0.10 alsasrc ! audioconvert ! audioresample ! vorbisenc ! oggmux ! filesink location=sonido.ogg"); 
-        system ("clear");
-        Transformar();
-        break;
-        
         
         case '2':
-        system("clear");
-        return(0);
-        break;
-        
-        default: printf("                      Opción Inválida!!\n"); 
+        system ("clear");
+        if (Seleccion==0){
+        system ("gst-launch-0.10 filesrc location=sonido.ogg ! decodebin ! audioconvert ! speed speed=2.2 ! audioconvert ! audioresample ! alsasink"); 
+               // bifurcacion. ! queue ! audioconvert ! wavescope ! ffmpegcolorspace ! ximagesink");
+              }
+        if (Seleccion==1){
+        system ("gst-launch filesrc location=BohemianRhapsody.ogg ! decodebin ! audioconvert ! speed speed=2.2 ! audioconvert ! audioresample ! autoaudiosink" );
+       }
+        if (Seleccion==2){
+        system ("gst-launch filesrc location=DBZ.ogg ! decodebin ! audioconvert ! speed speed=2.2 ! audioconvert ! audioresample ! autoaudiosink" );
+       }        
+       if (Seleccion==3){
+        system ("gst-launch filesrc location=PuertaNegra.ogg ! decodebin ! audioconvert ! speed speed=2.2 ! audioconvert ! audioresample ! autoaudiosink" );
+       }
+        if (Seleccion==4){
+        system ("gst-launch filesrc location=LosPollitosDicen.ogg ! decodebin ! audioconvert ! speed speed=2.2 ! audioconvert ! audioresample ! autoaudiosink" );
+       }
+        if (Seleccion==5){
+        system ("gst-launch filesrc location=Toxicity.ogg ! decodebin ! audioconvert ! speed speed=2.2 ! audioconvert ! audioresample ! autoaudiosink" );
+       }
         sleep(1);
-        
-}
-
-}
-	
-	
-	
-	
-	
-	
- }
+        break;
